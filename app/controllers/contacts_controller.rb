@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     if @contact.valid?
       @contact.save
     else
-      render new_contacts_path
+      render 'new' #new_contacts_path
     end
   end
 
