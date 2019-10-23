@@ -2,12 +2,15 @@
 
 class ContactsController < ApplicationController
   def new
-
   end
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.save
+    if @contact.valid?
+      @contact.save
+    else
+      render new_contacts_path
+    end
   end
 
   private
