@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def new
   end
 
@@ -6,7 +10,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(contact_params)
     if @article.valid?
       @article.save
-      redirect_to @article
+      redirect_to articles_path
     else
       render action: 'new' # new_contacts_path
     end
