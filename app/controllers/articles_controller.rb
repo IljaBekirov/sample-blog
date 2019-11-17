@@ -2,11 +2,13 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.order('created_at DESC').all
   end
 
   def show
     @article = Article.find(params[:id])
+    # @users = User.all
+    # @users = User.where(username: @article.author).first
   end
 
   def new
@@ -43,6 +45,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :author)
   end
 end

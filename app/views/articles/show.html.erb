@@ -1,27 +1,31 @@
-<h2><%= @article.title %></h2>
+<h3><%= @article.title %></h3>
 <p>
   <%= @article.text %>
 </p>
+<hr>
 <% @article.comments.each do |comment| %>
   <hr>
-  <i><%= comment.author %><br></i>
-  <%= comment.body %>
+    <div class="bs-example">
+      <%= comment.body %><br>
+      <p align="right" style="font-size: small">
+        <i>
+          Created by: <%= comment.author %> at: <%= comment.created_at.to_date %>
+        </i>
+      </p>
+    </div>
   <hr>
 <% end %>
-<p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :author%><br>
-    <%= f.text_field :author %>
+    <%= f.hidden_field :author, { :value => current_user.username } %>
   </p>
 
   <p>
     <%= f.label :body%><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, style: 'width:100%; height: 150px' %>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </p>
   <% end %>
-</p>
