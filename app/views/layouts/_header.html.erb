@@ -1,0 +1,22 @@
+<header class="clearfix col-md-12" id="nav-header">
+  <div class="navbar-header">
+    <div class="navbar-collapse">
+      <ul>
+        <li><a style="font-weight: bold; font-size: x-large" href="/">Blog</a></li>
+        <li><a href="/articles">Articles</a></li>
+        <li><a href="/articles/new">New</a></li>
+        <li><a href="/users">Пользователи</a></li>        
+      </ul>
+      <ul class="pull-right">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'Edit my profile', edit_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</header>

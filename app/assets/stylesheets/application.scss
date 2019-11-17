@@ -16,7 +16,8 @@
 
 //@import "bootstrap-sprockets";
 @import "bootstrap";
-
+//@import "font-awesome-sprockets";
+@import "font-awesome";
 
 .field_with_errors input {
     border-color: red;
@@ -24,4 +25,37 @@
 
 .field_with_errors textarea {
     border-color: red;
+}
+
+.devise-container {
+  display: table;
+  max-width: 400px;
+  .devise-bs {
+    margin: 20px 0 20px 0;
+    padding: 10px 30px 0 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  .btn-auth {
+    width: 100%;
+  }
+}
+
+#nav-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e7eaec;
+  .dropdown-header {
+    margin: 0;
+    padding: 12px 0 0 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      margin-left: 15px;
+      padding: 17px;
+    }
+  }
 }
