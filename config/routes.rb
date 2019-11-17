@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
 
   resource :contacts, only: %i[new create], path_names: { new: '' }
+  resources :users, only: %i[index show]
   resources :articles do
     resources :comments
   end
