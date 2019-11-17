@@ -46,6 +46,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '>= 2.15'
   gem 'factory_bot_rails'
+  gem 'pry'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
