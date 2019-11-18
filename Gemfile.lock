@@ -260,7 +260,7 @@ DEPENDENCIES
   bootstrap
   bootstrap-sass
   byebug
-  capybara (>= 2.15)
+  capybara
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
